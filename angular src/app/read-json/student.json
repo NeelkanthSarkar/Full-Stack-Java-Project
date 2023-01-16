@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "name":"Varun Dhawan",
+        "age":32,
+        "rollno":123456,
+        "course":"M.B.A"
+    },
+    {
+        "id":2,
+        "name":"Shahruk Khan",
+        "age":55,
+        "rollno":154356,
+        "course":"M.C.A"
+    },
+    {
+        "id":3,
+        "name":"Shaksham Dube",
+        "age":25,
+        "rollno":907845,
+        "course":"B.Tech"
+    },
+    {
+        "id":4,
+        "name":"Akshay Kumar",
+        "age":48,
+        "rollno":654421,
+        "course":"B.C.A"
+    },
+    {
+        "id":5,
+        "name":"Jonny Leaver",
+        "age":51,
+        "rollno":800943,
+        "course":"B.Tech"
+    }
+]

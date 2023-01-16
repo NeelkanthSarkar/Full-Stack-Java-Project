@@ -1,0 +1,15 @@
+#sid{
+    border:none;
+}
+#sname{
+    border: transparent;
+}
+#srollno{
+    border: transparent;
+}
+#scourse{
+    border: transparent;
+}
+*{
+    color:black;
+}

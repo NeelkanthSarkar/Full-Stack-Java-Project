@@ -1,0 +1,49 @@
+
+<div class="container">
+  <table class="table table-striped">
+<thead>
+  <tr><button (click)="displayAddStudentForm()" ><h4>Add a new Student</h4></button></tr>
+</thead>
+<div *ngIf="displayform">
+<tbody>
+  <tr><td>Name</td> <td><input #name placeholder="name" [(ngModel)]="stname"/></td></tr>
+  <tr><td>Rollno</td> <td><input type="number" #roll placeholder="rollno" [(ngModel)]="stroll"/></td></tr>
+  <tr><td>Course</td> <td><input #course placeholder="course" [(ngModel)]="stcourse"/></td></tr>
+  <tr>
+   <td> <button (click)="addStudent(name.value,roll.value,course.value)">Add Student</button></td>
+   <td> <button (click)="closeStudentForm()">Close</button></td>
+  </tr>
+</tbody>
+</div>
+<button (click)="refreshPage()"><h4>Refresh</h4></button>
+</table>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Roll no</th>
+        <th scope="col">Course</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" *ngFor="let st of studentObj">
+          <td ><input #sid value="{{st.id}}" disabled></td>
+          <td ><input #sname value="{{st.name}}" disabled ></td>
+          <td ><input #srollno value="{{st.rollno}}" disabled></td>
+          <td ><input #scourse value="{{st.course}}" disabled></td>
+          <td>
+            <div *ngIf="displayEditButton;else displayShowButton">
+            <button [hidden]="!displayEditButton" type="button" (click)="deleteStudent(st.id)">Delete</button>
+            <button [hidden]="!displayEditButton" type="button" (click)="editStudent(sname,srollno,scourse)">Edit</button>
+          </div>
+          <ng-template #displayShowButton>
+            <button [hidden]="displayEditButton" type="button" (click)="saveEditedStudent(sid.value,sname.value,srollno.value,scourse.value)">Save</button>
+          </ng-template>
+
+          </td>
+      </tr>
+    </tbody>
+  </table> 
+</div>
